@@ -46,7 +46,7 @@ export const initialMessages: Message[] = [
     role: "assistant",
     id: "0",
     content:
-      "Hi! I am your PDF assistant. I am happy to help with your questions about your PDF about Kazakh law.",
+      "Hi! I am your AI legal assistant. Choose the country and ask me anything related to law.",
   },
 ];
 

@@ -1,5 +1,14 @@
 import { DarkModeToggle } from "@/components/dark-mode-toggle";
 import { Chat } from "@/components/chat";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function Home() {
   return (
