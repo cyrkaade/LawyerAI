@@ -1,11 +1,22 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  webpack(config) {
-    config.experiments = { ...config.experiments, topLevelAwait: true };
+module.exports = {
+  experimental: {
+    windowHistorySupport: true
+  },
+  webpack5: true,
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+
     return config;
   },
-};
-
-export default nextConfig;
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+        port: '',
+        pathname: '**'
+      }
+    ]
+  },
+}
