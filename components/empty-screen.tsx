@@ -27,7 +27,7 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
           Welcome to LawyerAI!
         </h1>
         <p className="mb-2 leading-normal text-muted-foreground">
-          This is a helpful assistant that helps solve confusing problems and gives everything in context of one country's law system.
+          This is a helpful legal assistant. Just ask a question about laws or legal system of some country.
         </p>
         <p className="leading-normal text-muted-foreground">
           You can start a conversation here by choosing a country:
