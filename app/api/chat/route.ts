@@ -22,7 +22,9 @@ export async function POST(req: Request) {
       const chatHistory = messages.slice(0, -1).map(message => message.content).join('\n');
       console.log('hist:', chatHistory)
       const streamingResponse = await callChain({ question, chatHistory });
-
+      setTimeout(() => {
+        console.log('Streaming Response (after 15 seconds):', streamingResponse);
+    }, 15000);
       return streamingResponse;
   } catch (e) {
       console.error(e);
