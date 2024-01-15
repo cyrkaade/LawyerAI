@@ -8,6 +8,7 @@ export async function POST(req: Request) {
   try {
       const json = await req.json();
       const { messages, previewToken } = json;
+      
       const userId = (await auth())?.user.id;
       console.log('userID= ', userId)
 
