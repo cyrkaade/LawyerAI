@@ -36,6 +36,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+      <meta name="google-site-verification" content="VkqBKIhQWWWGAW-qVO8RNFo1m09csSXqVdl7-zXOf94" />
+      </head>
       <body
         className={cn(
           'font-sans antialiased',

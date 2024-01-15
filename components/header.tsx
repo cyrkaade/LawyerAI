@@ -34,8 +34,9 @@ async function UserOrLogin() {
         </>
       ) : (
         <Link href="/" target="_blank" rel="nofollow">
-          <IconNextChat className="w-6 h-6 mr-2 dark:hidden" inverted />
-          <IconNextChat className="hidden w-6 h-6 mr-2 dark:block" />
+          <h1>
+          LawyerAI
+        </h1>
         </Link>
       )}
       <div className="flex items-center">
@@ -61,9 +62,6 @@ export function Header() {
         </React.Suspense>
       </div>
       <div className="flex items-center justify-end space-x-2">
-        <h1>
-          LawyerAI
-        </h1>
       </div>
     </header>
   )
