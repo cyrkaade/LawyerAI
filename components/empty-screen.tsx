@@ -6,16 +6,16 @@ import { IconArrowRight } from '@/components/ui/icons'
 
 const exampleMessages = [
   {
-    heading: 'Is it possible to get money back after making a purchase?',
-    message: `Is it possible to get money back after making a purchase?`
+    heading: 'Is it possible to do this?',
+    message: `Is it possible to do this?`
   },
   {
     heading: 'Give solution to this situation',
     message: 'Give solution to this situation: \n'
   },
   {
-    heading: 'Person did this thing. What will be the punishment?',
-    message: `Person did this thing. What will be the punishment? \n`
+    heading: 'What rights do I have?',
+    message: `What rights do I have? \n`
   }
 ]
 
