@@ -26,16 +26,17 @@ export const {
     jwt({ token, profile }) {
       if (profile) {
         token.id = profile.id
-        token.image = profile.avatar_url || profile.picture
+        token.image = profile.picture; // Ensure this line is correctly fetching the picture from Google
       }
-      return token
-    },
-    session: ({ session, token }) => {
+      return token;
+    }
+    session({ session, token }) {
       if (session?.user && token?.id) {
-        session.user.id = String(token.id)
+        session.user.id = String(token.id);
+        session.user.image = token.image; // Add this line to pass the avatar URL to the session
       }
-      return session
-    },
+      return session;
+    }
     authorized({ auth }) {
       return !!auth?.user // this ensures there is a logged in user for -every- request
     }
