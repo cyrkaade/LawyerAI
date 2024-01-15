@@ -33,7 +33,7 @@ export function LoginButton({
     >
       {isLoading ? (
         <IconSpinner className="mr-2 animate-spin" />
-      ) : showGithubIcon ? (
+      ) : showGoogleIcon ? (
         <IconGoogle className="mr-2" />
       ) : null}
       {text}
