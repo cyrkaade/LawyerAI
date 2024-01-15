@@ -24,17 +24,19 @@ export const {
     }),
   ],
   callbacks: {
-    jwt({ token, profile }) {
+    jwt({ token, profile, account }) {
       if (profile) {
-        token.id = profile.id
+        token.accessToken = account?.access_token;
+        token.id = profile?.id;
+        console.log('token id= ', token.id);
         token.image = profile.picture; // Ensure this line is correctly fetching the picture from Google
       }
       return token;
     },
     session({ session, token }) {
       if (session?.user && token?.id) {
-        session.user.id = token.sub as string;
-        console.log('session user id= ', session.user.id)
+        session.user.id = String(token.id);
+        console.log('session user id= ', session.user.id);
         session.user.image = token.image as string | undefined; // Add this line to pass the avatar URL to the session
       }
       return session;
