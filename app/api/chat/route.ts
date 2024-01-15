@@ -1,5 +1,6 @@
 import { callChain } from '@/lib/langchain'; 
 import { auth } from '@/auth';
+import { getSession } from 'next-auth/react';
 
 export const runtime = 'edge';
 
@@ -8,6 +9,7 @@ export async function POST(req: Request) {
       const json = await req.json();
       const { messages, previewToken } = json;
       const userId = (await auth())?.user.id;
+      console.log('userID= ', userId)
 
       if (!userId) {
           return new Response('Unauthorized', {

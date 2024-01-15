@@ -1,6 +1,7 @@
 import NextAuth, { type DefaultSession } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google';
 
+
 declare module 'next-auth' {
   interface Session {
     user: {
@@ -33,6 +34,7 @@ export const {
     session({ session, token }) {
       if (session?.user && token?.id) {
         session.user.id = token.sub as string;
+        console.log('session user id= ', session.user.id)
         session.user.image = token.image as string | undefined; // Add this line to pass the avatar URL to the session
       }
       return session;
