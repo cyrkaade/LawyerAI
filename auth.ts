@@ -32,7 +32,7 @@ export const {
     },
     session({ session, token }) {
       if (session?.user && token?.id) {
-        session.user.id = String(token.id);
+        session.user.id = token.sub as string;
         session.user.image = token.image as string | undefined; // Add this line to pass the avatar URL to the session
       }
       return session;
