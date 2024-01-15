@@ -59,6 +59,9 @@ export function Header() {
         </React.Suspense>
       </div>
       <div className="flex items-center justify-end space-x-2">
+        <h1 className='mr-20'>
+          LawyerAI
+        </h1>
       </div>
     </header>
   )

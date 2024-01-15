@@ -6,16 +6,16 @@ import { IconArrowRight } from '@/components/ui/icons'
 
 const exampleMessages = [
   {
-    heading: 'Explain technical concepts',
-    message: `What is a "serverless function"?`
+    heading: 'Is it possible to get money back after making a purchase?',
+    message: `Is it possible to get money back after making a purchase?`
   },
   {
-    heading: 'Summarize an article',
-    message: 'Summarize the following article for a 2nd grader: \n'
+    heading: 'Give solution to this situation',
+    message: 'Give solution to this situation: \n'
   },
   {
-    heading: 'Draft an email',
-    message: `Draft an email to my boss about the following: \n`
+    heading: 'Person did this thing. What will be the punishment?',
+    message: `Person did this thing. What will be the punishment? \n`
   }
 ]
 
@@ -27,17 +27,17 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
           Welcome to LawyerAI!
         </h1>
         <p className="mb-2 leading-normal text-muted-foreground">
-          This is a helpful legal assistant. Just ask a question about laws or legal system of some country.
+          This is a helpful legal assistant. Just ask a question about laws or legal system of Kazakhstan.
         </p>
         <p className="leading-normal text-muted-foreground">
-          You can start a conversation here by choosing a country:
+          You can start a conversation here by choosing a question:
         </p>
         <div className="mt-4 flex flex-col items-start space-y-2">
           {exampleMessages.map((message, index) => (
             <Button
               key={index}
               variant="link"
-              className="h-auto p-0 text-base"
+              className="h-auto p-0 text-base text-left"  
               onClick={() => setInput(message.message)}
             >
               <IconArrowRight className="mr-2 text-muted-foreground" />

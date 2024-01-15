@@ -28,19 +28,14 @@ export const {
       if (profile) {
         console.log('profile= ', profile);
         console.log('token=', token);
-        token.picture = profile.picture;
+        token.image = profile.picture;
       }
       return token;
     },
     session({ session, token }) {
       if (session?.user) {
         session.user.id = String(token.sub);
-        console.log('token= ', token)
-        console.log('token sub= ', String(token.sub))
-        console.log('session user id= ', session.user.id);
-        console.log('session= ', session)
         session.user.image = token.image as string | undefined; // Add this line to pass the avatar URL to the session
-        console.log('picture= ', session.user.image)
       }
       return session;
     },
