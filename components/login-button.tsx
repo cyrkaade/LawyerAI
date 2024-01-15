@@ -8,13 +8,13 @@ import { Button, type ButtonProps } from '@/components/ui/button'
 import { IconGitHub, IconSpinner, IconGoogle } from '@/components/ui/icons'
 
 interface LoginButtonProps extends ButtonProps {
-  showGithubIcon?: boolean
+  showGoogleIcon?: boolean
   text?: string
 }
 
 export function LoginButton({
   text = 'Login with Google',
-  showGithubIcon = false,
+  showGoogleIcon = true,
   className,
   ...props
 }: LoginButtonProps) {
