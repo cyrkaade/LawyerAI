@@ -24,18 +24,19 @@ export const {
     }),
   ],
   callbacks: {
-    jwt({ token, profile, account }) {
+    jwt({ token, profile }) {
       if (profile) {
-        token.id = profile?.id;
         console.log('profile= ', profile);
         console.log('token=', token);
-        console.log('token id= ', token.id);
+        token.picture = profile.picture;
       }
       return token;
     },
     session({ session, token }) {
       if (session?.user) {
-        session.user.id = String(token.id);
+        session.user.id = String(token.sub);
+        console.log('token= ', token)
+        console.log('token sub= ', String(token.sub))
         console.log('session user id= ', session.user.id);
         console.log('session= ', session)
         session.user.image = token.image as string | undefined; // Add this line to pass the avatar URL to the session
