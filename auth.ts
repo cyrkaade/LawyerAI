@@ -1,5 +1,5 @@
 import NextAuth, { type DefaultSession } from 'next-auth'
-import GitHub from 'next-auth/providers/github'
+import GoogleProvider from 'next-auth/providers/google';
 
 declare module 'next-auth' {
   interface Session {
@@ -10,11 +10,18 @@ declare module 'next-auth' {
   }
 }
 
+
 export const {
   handlers: { GET, POST },
   auth
 } = NextAuth({
-  providers: [GitHub],
+  providers: [
+    // Configure the Google provider
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+  ],
   callbacks: {
     jwt({ token, profile }) {
       if (profile) {

@@ -9,17 +9,9 @@ import { Providers } from '@/components/providers'
 import { Header } from '@/components/header'
 
 export const metadata = {
-  metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
-  title: {
-    default: 'Next.js AI Chatbot',
-    template: `%s - Next.js AI Chatbot`
-  },
-  description: 'An AI-powered chatbot template built with Next.js and Vercel.',
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png'
-  }
+  name: "google-site-verification",
+  content:"VkqBKIhQWWWGAW-qVO8RNFo1m09csSXqVdl7-zXOf94",
+  
 }
 
 export const viewport = {
@@ -36,9 +28,6 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-      <meta name="google-site-verification" content="VkqBKIhQWWWGAW-qVO8RNFo1m09csSXqVdl7-zXOf94" />
-      </head>
       <body
         className={cn(
           'font-sans antialiased',
