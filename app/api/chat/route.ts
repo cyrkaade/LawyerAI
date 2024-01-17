@@ -27,6 +27,8 @@ export async function POST(req: Request) {
       const chatHistory = messages.slice(0).map(message => message.content).join('\n');
       console.log('hist:', chatHistory)
       const streamingResponse = await callChain({ question, chatHistory });
+      
+      console.log('streaming response = ', streamingResponse)
         const title = messages[0]?.content.substring(0, 100);
         const id = json.id ?? nanoid();
         const createdAt = Date.now();
