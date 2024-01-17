@@ -26,8 +26,6 @@ export const {
   callbacks: {
     jwt({ token, profile }) {
       if (profile) {
-        console.log('profile= ', profile);
-        console.log('token=', token);
         token.image = profile.picture;
       }
       return token;

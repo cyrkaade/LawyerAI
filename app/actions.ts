@@ -8,7 +8,9 @@ import { auth } from '@/auth'
 import { type Chat } from '@/lib/types'
 
 export async function getChats(userId?: string | null) {
+  console.log('userId = ', userId)
   if (!userId) {
+    console.log(userId)
     return []
   }
 
@@ -17,15 +19,17 @@ export async function getChats(userId?: string | null) {
     const chats: string[] = await kv.zrange(`user:chat:${userId}`, 0, -1, {
       rev: true
     })
-
+    console.log('chats= ', chats)
     for (const chat of chats) {
+      console.log('chat= ', chat)
       pipeline.hgetall(chat)
     }
 
     const results = await pipeline.exec()
-
+    console.log('results = ', results)
     return results as Chat[]
   } catch (error) {
+    console.log('err = ', error)
     return []
   }
 }
@@ -36,7 +40,7 @@ export async function getChat(id: string, userId: string) {
   if (!chat || (userId && chat.userId !== userId)) {
     return null
   }
-
+  console.log('chat= ',chat)
   return chat
 }
 

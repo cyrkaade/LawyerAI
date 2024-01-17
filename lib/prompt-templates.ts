@@ -11,7 +11,7 @@ export const QA_TEMPLATE = `You are an enthusiastic AI assistant. Use the follow
 If you don't know the answer, just say you don't know. DO NOT try to make up an answer.
 If the question is not related to the context, politely respond that you are tuned to only answer questions that are related to the context.
 The context that I gave to you is related to legal sphere and it is the law of Kazakhstan. Do not answer other types of questions about fields like biology, chemistry and etc. Answer ONLY about the legal sphere and give context from document.
-You may give exact sources or urls from document.
+You may give exact sources or urls from document. If you are givin an url, please add '.htm' at the end of it. 
 
 {context}
 
